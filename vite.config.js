@@ -1,6 +1,5 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import eslintPlugin from "vite-plugin-eslint";
 import WindiCSS from "vite-plugin-windicss";
 import Components from "unplugin-vue-components/vite";
 import Icons from "unplugin-icons/vite";
@@ -10,27 +9,17 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/", // 開始路徑
-  resolve: {
-    alias: {
-      // 別名
-      "@/": new URL("./src/", import.meta.url).pathname,
-      "/images": new URL("./src/assets/images", import.meta.url).pathname,
-    },
-  },
-  server: {
-    proxy: {
-      "/news": {
-        target: "https://news.housefun.com.tw",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/news/g, ""),
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     "/news": {
+  //       target: "https://news.housefun.com.tw",
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/news/g, ""),
+  //     },
+  //   },
+  // },
   plugins: [
     vue(),
-    eslintPlugin({
-      include: ["src/**/*.js", "src/**/*.vue"],
-    }),
     WindiCSS({
       fileExtensions: ["vue", "js", "html"],
     }),
