@@ -24,10 +24,7 @@ export default defineConfig({
       fileExtensions: ["vue", "js", "html"],
     }),
     Components({
-      resolvers: IconsResolver({
-        compiler: "vue3",
-        prefix: "Icon",
-      }),
+      resolvers: IconsResolver(),
     }),
     Icons(),
   ],
