@@ -9,15 +9,6 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/", // 開始路徑
-  // server: {
-  //   proxy: {
-  //     "/news": {
-  //       target: "https://news.housefun.com.tw",
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/news/g, ""),
-  //     },
-  //   },
-  // },
   plugins: [
     vue(),
     WindiCSS({
